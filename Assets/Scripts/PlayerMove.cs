@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMove : MonoBehaviour
 {
@@ -56,6 +58,11 @@ public class PlayerMove : MonoBehaviour
         if (ColliderPies.isGrounded==true)
         {
             animator.SetBool("Jump", false);
+        }
+          if (Input.GetKey(KeyCode.Escape))
+        {
+            Debug.Log("Escape key was released");
+            SceneManager.LoadScene(0);
         }
     }
 }
